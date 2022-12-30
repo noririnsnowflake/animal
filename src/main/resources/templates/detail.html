@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>詳細画面</title>
+<link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+<h1>詳細</h1>
+<br>
+<div th:object="${detailForm}">
+<input type="button" onclick="location.href='/index'" value="一覧へ">
+<table>
+	<tbody>
+ 		<tr>
+			<th>動物の名前</th>
+		    <td>
+		    	<p th:text="*{animal}"></p>
+		    </td>
+		</tr>
+		<tr>
+		    <th>特徴</th>
+		    <td>
+		    	<p th:text="*{features}"></p>
+		    </td>
+		</tr>
+
+		<tr>
+		    <th>生息地</th>
+		    <td>
+		    	<p th:text="*{habitat}"><p th:text="*{id}"></p>
+		    </td>
+		</tr>
+	</tbody>
+</table>
+<img th:src="@{${'/img/' + detailForm.picture1 + '.png'}}" />
+<form action="#" th:action="@{/edit}" method="POST">
+	<input type = "hidden" name="id" th:value="*{id}">
+	<input type = "hidden" name="animal" th:value="*{animal}">
+	<input type = "hidden" name="features" th:value="*{features}">
+	<input type = "hidden" name="habitat" th:value="*{habitat}">
+	<input type = "hidden" name="picture1" th:value="*{picture1}">
+	<input type="submit" value="編集">
+</form>
+
+</div>
+</body>
+</html>

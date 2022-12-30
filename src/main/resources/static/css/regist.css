@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+
+h1{
+ text-aligin: center;
+ font-size: 16px;
+
+}
+
+table{
+	margin:20px;
+	background-image: linear-gradient(40deg, #fce043 0%, #fb7ba2 74%);
+}
+
+table th{
+  padding : 50px 10px;
+  border:double 2px #2196f3;
+  background-color: orange;
+}
+
+th,td{
+  border:double 2px #2196f3;
+  background-color: orange;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>編集画面</title>
+<link rel="stylesheet" href="css/edit.css">
+</head>
+<body>
+<h1>編集</h1>
+<br>
+<div th:object="${editForm}">
+<form action="#" th:action="@{/reindex}" method="POST">
+<table>
+	<tbody>
+		<tr>
+	  		<th>動物の名前</th>
+		    <td>
+		    	<input type="text" name="animal" th:value="*{animal}">
+		    </td>
+	  	</tr>
+		<tr>
+	    	<th>特徴</th>
+	    	<td>
+	    		<input type="text" name="features" th:value="*{features}"/>
+	    	</td>
+	  	</tr>
+	  	<tr>
+	    	<th>生息地</th>
+	    	<td>
+	    		<input type="text" name="habitat" th:value="*{habitat}"/>
+	    	</td>
+	  	</tr>
+	</tbody>
+</table>
+<input type = "hidden" name="id" th:value="*{id}">
+<input type = "hidden" name="picture1" th:value="*{picture1}">
+<input type = "submit" value = "完了">
+</form>
+<img th:src="@{${'/img/' + editForm.picture1 + '.png'}}" />
+<form action="#" th:action="@{/redetail}" method="POST">
+	<input type = "hidden" name="id" th:value="*{id}">
+	<input type = "hidden" name="animal" th:value="*{animal}">
+	<input type = "hidden" name="features" th:value="*{features}">
+	<input type = "hidden" name="habitat" th:value="*{habitat}">
+	<input type = "hidden" name="picture1" th:value="*{picture1}">
+	<input type="submit" value="戻る">
+</form>
+</div>
+</body>
+</html>
