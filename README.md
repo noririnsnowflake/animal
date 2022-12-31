@@ -16,4 +16,6 @@ SpringFrameworkで作成した動物管理システムです<br>
 また各レイヤ層を意識した造りとなっています<br>
 Application層…Controllerクラス、modelクラス 、htmlファイル<br>
 Domain層…Serviceクラス<br>
-Infrastructure層…Daoクラス、entityクラス
+Infrastructure層…Daoクラス、entityクラス<br><br>
+
+gitを使用しソース管理をしています
